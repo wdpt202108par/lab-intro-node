@@ -21,18 +21,18 @@ class SortedList {
   };
 
   max() {
-    if (this.items = []) {
+    if (this.items.length === 0) {
       throw new Error('EmptySortedList');
     } else {
-      return Math.max(this.items);
+      return Math.max.apply(Math, this.items);
     };
   };
 
   min() {
-    if (this.items = []) {
+    if (this.items.length === 0) {
       throw new Error('EmptySortedList');
     } else {
-      return Math.min(this.items);
+      return Math.min.apply(Math, this.items);
     };
   }
 
@@ -41,10 +41,11 @@ class SortedList {
   }
 
   avg() {
-    if (this.items = []) {
+    if (this.items.length === 0) {
       throw new Error('EmptySortedList');
     } else {
       return this.items.reduce((a,b) => a + b, 0) / this.items.length;
+    };
   };
 }
 
