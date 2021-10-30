@@ -39,10 +39,15 @@ class SortedList {
       return 0;
     }
     // return this.items.reduce((a, b) => a + b);
-    return this.items.reduce(function (a, b) {return a + b});
+    return this.items.reduce(function (c, d) {return c + d});
   }
 
-  avg() {}
+  avg() {
+    if (this.length === 0) {
+      throw new Error('EmptySortedList');
+    }
+    return this.sum()/this.length;
+  }
 }
 
 module.exports = SortedList;
