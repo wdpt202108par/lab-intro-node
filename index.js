@@ -27,9 +27,20 @@ class SortedList {
     return this.items[this.length -1];
   }
 
-  min() {}
+  min() {
+    if (this.length === 0) {
+      throw new Error('EmptySortedList');
+    }
+    return this.items[0];
+  }
 
-  sum() {}
+  sum() {
+    if (this.length === 0) {
+      return 0;
+    }
+    // return this.items.reduce((a, b) => a + b);
+    return this.items.reduce(function (a, b) {return a + b});
+  }
 
   avg() {}
 }
